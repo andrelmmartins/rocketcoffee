@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #000;
+    --text-color: #FFF;
+    --button: #8257E5;
+    --border: #29292E;
+    --border-menu-mobile: #29292E;
+    --text-color-menu-mobile: #E1E1E6;
+
+    --lg: 1366px;
+    --md: 1170px;
+    --sm: 580px;
+}
+
+html {
+    background: var(--background);
+    color: var(--text-color);
+
+    font-size: 62.5%;
+    font-family: 'Manrope', sans-serif;
+
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    height: 100%;
+    max-width: var(--lg);
+    margin: 0 10%;
+}
+
+#blur-1 {
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+
+    z-index: -1;
+}
+
+#blur-2 {
+    position: fixed;
+    top: 0;
+    right: 0; 
+
+    z-index: -1;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--button);
+    border-radius: 8px; 
+    border: 3px solid var(--background);
+}
+
+/* ---------------------------- RESPONSIVE */
+
+@media screen and (max-width: 1170px) {
+    .container {
+        max-width: var(--md);
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .container {
+        max-width: var(--sm);
+        margin: 0 5%;
+    }
+
+    #blur-2 {
+        display: none;
+    }
+}

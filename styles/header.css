@@ -1,0 +1,225 @@
+header {
+    margin: 50px 0;
+}
+
+header .content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+header .flex {
+    flex: 1;
+    display: flex;
+}
+
+header .flex#flex-logo {
+    justify-content: flex-end;
+}
+
+header #logo {
+    height: 50px;
+    width: 50px;
+
+    display: block;
+
+    background: url('../assets/logo-desktop.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+header nav {    
+    width: 40%; 
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0 10%;
+}
+
+header nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+header button.CTA {
+    background: transparent;
+    color: var(--text-color);
+
+    border: 1px solid var(--button);
+    border-radius: 6px;
+
+    padding: 1.1rem 3.8rem;
+
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.1rem;
+
+    cursor: pointer;
+}
+
+header button#toggle {
+    background: none;
+    border: none;
+
+    display: none;
+    cursor: pointer;
+}
+
+header button#toggle div {
+    height: 25px;
+    width: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+header button#toggle div #one, header button#toggle div #two {
+    display: block;
+    height: 2px;
+    background: var(--button);
+    transition: 0.3s;
+}
+
+header button#toggle div #one {
+    width: 100%;
+}
+
+header button#toggle.close div #one {
+    width: 100%;
+    transform: rotate(45deg) translate(4px, 3px);
+}
+
+header button#toggle.close div #two {
+    width: 100%;
+    transform: rotate(-45deg) translate(3px, -3px);
+}
+
+header button#toggle div #two {
+    width: 66%;
+}
+
+/* ---------------------------- RESPONSIVE */
+
+@media screen and (max-width: 1170px) {
+    
+    header {
+        margin: 100px 0;
+    }
+
+    header #logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    header .flex#flex-logo { 
+        flex: none;
+    }
+
+    header button.CTA {
+        display: none;
+    }
+
+    header .flex#flex-button { 
+        display: none 
+    }
+
+    header nav {
+        flex: 1;
+        justify-content: flex-end;
+        margin: 0;
+    }
+
+    header nav a ~ a {
+        margin-left: 20px;
+    }
+
+}
+
+@media screen and (max-width: 580px) {
+    
+    header {
+        margin: 0;
+        height: 80px;
+        display: block;
+
+        border-bottom: 1px solid var(--border-menu-mobile);
+    }
+
+    header nav {
+        position: fixed;
+        top: 81px;
+        
+        width: 100%;
+        height: 0px;
+
+        background: var(--background);
+
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        overflow: hidden;
+
+        transition: 0.3s;
+    }
+
+    header nav.open {
+        height: calc(100% - 81px);
+    }
+
+    header nav a {
+        
+        height: 50px;
+        width: 100%;
+
+        border-bottom: 1px solid var(--border-menu-mobile);
+        color: var(--text-color-menu-mobile);
+
+        font-size: 1.8rem;
+        font-weight: 400;
+        padding-left: 25px;
+        border-left: 5px solid var(--background);
+
+        display: flex;
+        align-items: center;
+    }
+
+    header nav a ~ a {
+        margin-left: 0px;
+    }
+
+    header nav a.active {
+        border-left: 5px solid var(--button);
+        padding-left: 25px;
+        color: var(--text-color);
+        font-weight: 700;
+    }
+
+    header .content {
+        justify-content: center;
+    }
+
+    header .flex#flex-logo{
+        justify-content: flex-start;
+    }
+
+    header .flex#flex-button {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    header button#toggle{
+        display: block;
+    }
+
+    header #logo {
+        height: 35px;
+        width: 175px;
+
+        background: url('../assets/logo-mobile.svg') no-repeat;
+    }
+
+}

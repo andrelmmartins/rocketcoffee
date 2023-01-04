@@ -1,0 +1,108 @@
+main .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 4.1rem;
+    letter-spacing: 0.02em;
+
+    margin-bottom: 100px;
+
+    display: none;
+}
+
+main button.CTA {
+
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background: transparent;
+    color: var(--text-color);
+
+    border: 1px solid var(--button);
+    border-radius: 6px;
+
+    padding: 1.1rem 3.8rem;
+
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.1rem;
+
+    margin-bottom: 100px;
+
+    cursor: pointer;
+
+    display: none;
+}
+
+h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 9rem;
+    letter-spacing: -0.03em;
+}
+
+h1 span {
+    color: var(--background);
+    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+}
+
+#copos {
+    max-width: 900px;
+    min-width: 700px;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+
+    z-index: -1;
+}
+
+/* ---------------------------- RESPONSIVE */
+
+@media screen and (max-width: 1170px) {
+
+    main.content {
+        height: fit-content;
+        display: block;
+    }
+
+    #copos {
+        position: relative;
+    }
+
+    h1 {
+        font-size: 7rem;
+        line-height: 8rem;
+        margin-bottom: 100px;
+    }
+
+    h2 {
+        display: block;
+    }
+
+    main button.CTA {
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width: 580px) {
+
+    h1 {
+        font-size: 5rem;
+        line-height: 6rem;
+        margin-bottom: 100px;
+    }
+
+    h2 {
+        margin-top: 100px;
+    }
+
+}
